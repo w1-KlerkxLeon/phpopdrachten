@@ -1,0 +1,57 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   5-2-2020
+ *  Time:   15:00 uur
+ *  File:   opdracht_2.1.css
+ */
+
+/*Body margin verwijderen*/
+body
+{
+    margin: 0px;
+}
+/*Titel rechts centreren en achtergrondkleur instellen*/
+h1
+{
+    text-align: right;
+    background-color: #EFF7FE;
+    margin-bottom: 0px;
+    padding: 20px 20px 20px 0px;
+}
+/*Menudeel achtergrondkleur geven en breedte geven*/
+aside
+{
+    background-color: #F4F4DB;
+    height: 60%;
+    width: 40%;
+    padding: 40px 0px 0px 20px;
+}
+/*Titel 'Menu' marge bovenkant verwijderen zodat het aan elkaar komt te staan*/
+aside>h2
+{
+    margin-top: 0px;
+}
+/*Links niet onderstreept en kleur geven*/
+li>a
+{
+    text-decoration: none;
+    color: #0000FF;
+}
+/*Links onderstreept als je eroverheen gaat*/
+li>a:hover
+{
+    text-decoration: underline;
+}
+/*Tekst onder het menu van de kantlijn af*/
+#wrapper
+{
+    padding-left: 10px;
+}
+/*Titel 'Uitwerkingen' naast menu zetten*/
+#wrapper>h2
+{
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    left: 42%;
+}
