@@ -159,6 +159,9 @@
                     echo "$text7 Nooit gedacht dat $text4 eigenlijk toch een makkelijke taal blijkt te zijn!";
                 ?>
             </p>
+            <p>
+                Test map .idee weg
+            </p>
         </main>
     </body>
 </html>
