@@ -139,18 +139,6 @@
             <h1>
                 Taak 3
             </h1>
-            <!--Taak 3 tekst laten verschijnen-->
-            <!--<p>
-                <?php
-/*                    echo "Hallo, wat is $text4, ondanks de ingewikkelde installatie toch een makkelijke taal?";
-                */?>
-            </p>
-            <p>
-                <?php
-/*                    echo "$text7 Nooit gedacht dat $text4 eigenlijk toch een makkelijke taal blijkt te zijn!";
-                */?>
-            </p>-->
-
             <!--Taak 3 in 1 php blok-->
             <p>
                 <?php
