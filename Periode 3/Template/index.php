@@ -3,7 +3,7 @@
  *  User:   Leon Klerkx
  *  Date:   5-2-2020
  *  Time:   14:45 uur
- *  File:   index.php
+ *  File:   oefenopdracht.php
  */
 ?>
 <!DOCTYPE HTML>
@@ -15,7 +15,7 @@
         <link href="CSS/style.css" type="text/css" rel="stylesheet">
         <meta name="description" content="">
         <meta name="keywords" content="">
-<!--        <meta charset="x-UTF-16LE-BOM">-->
+
     </head>
     <body>
         <header>
