@@ -9,12 +9,13 @@
 body
 {
     margin: 0px;
+    background-color: #90EE90;
 }
 /*Titel rechts centreren en achtergrondkleur instellen*/
 h1
 {
-    text-align: right;
-    background-color: #EFF7FE;
+    text-align: center;
+    background-color: #FFA500;
     margin: 0px;
     padding: 20px 20px 20px 0px;
 }
@@ -22,9 +23,9 @@ h1
 aside
 {
     display: inline-block;
-    background-color: #F4F4DB;
+    background-color: #ADD8E6;
     height: 60%;
-    width: 40%;
+    width: 25%;
     padding: 40px 0px 0px 20px;
 }
 /*Titel 'Menu' marge bovenkant verwijderen zodat het aan elkaar komt te staan*/
@@ -55,7 +56,6 @@ li>a:hover
     display: inline-block;
     position: absolute;
     top: 20%;
-    left: 42%;
 }
 /*Echo 'Hello World!' onder uitwerkingen zetten*/
 #wrapper p

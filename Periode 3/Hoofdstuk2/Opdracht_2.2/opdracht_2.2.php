@@ -55,7 +55,7 @@
                             <a href="hoofdstuk3/opdracht_3-2.php">Opdracht 3.2</a>
                         </li>
                         <li>
-                            <a href="hoofdstuk3/opdracht_3-2.php">Opdracht 3.2</a>
+                            <a href="hoofdstuk3/opdracht_3-3.php">Opdracht 3.3</a>
                         </li>
                     </ul>
                 </li>
@@ -169,7 +169,7 @@
                 $text11 = ",";
                 $text12 = "<br>";
                 $text13 = " is";
-                $text14 = "Vind je niet";
+                $text14 = " Vind je niet";
             ?>
         </p>
         <!--Taak 2 tekst laten verschijnen-->
