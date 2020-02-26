@@ -1,0 +1,17 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   18-2-2020
+ *  Time:   21:25 uur
+ *  File:   opdracht_3.2.css
+ */
+
+/*Stoplicht rood = rode kleur*/
+.rood
+{
+    color: #FF0000;
+}
+/*Stoplicht groen = groene kleur*/
+.groen
+{
+    color: #008000;
+}
