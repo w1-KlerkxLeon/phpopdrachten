@@ -1,0 +1,19 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   3-3-2020
+ *  Time:   17:00 uur
+ *  File:   opdracht_4.2.css
+ */
+
+/*Positie tekst*/
+#vaknaamEnLeraar
+{
+    position: absolute;
+    top: 65%;
+    left: 27%;
+}
+/*Vaknaam en leraar dikgedrukt*/
+#vaknaamEnLeraar>span
+{
+    font-weight: 900;
+}
