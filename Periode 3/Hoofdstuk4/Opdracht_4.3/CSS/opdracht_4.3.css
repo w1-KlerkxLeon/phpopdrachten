@@ -1,0 +1,24 @@
+
+
+p
+{
+    /*padding-left: 0px;
+    position: absolute;
+    top: 0%;
+    width: 0%*/;
+    position: relative;
+    top: 0%;
+    width: 100%;
+}
+
+h2
+{
+    position: relative!important; /*Hoe moet dit anders?*/
+
+}
+
+footer
+{
+    position: relative;
+    left: 0%;
+}
