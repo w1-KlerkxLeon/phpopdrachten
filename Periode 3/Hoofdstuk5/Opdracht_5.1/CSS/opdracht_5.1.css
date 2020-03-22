@@ -1,0 +1,59 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   19-3-2020
+ *  Time:   21:20 uur
+ *  File:   opdracht_5.1.css
+ */
+
+/*Tabelcellen aan elkaar zetten*/
+table
+{
+    border-collapse: collapse;
+}
+/*Tabelcellen zwarte rand geven*/
+td
+{
+    border: 1px solid #000000;
+}
+
+/*Fieldset border verwijderen*/
+fieldset
+{
+    border: none;
+}
+
+/*Formuliernamen uitlijnen*/
+p
+{
+    position: relative;
+}
+
+/*Inputvelden groter maken*/
+input
+{
+    width: 38.2%;
+    height: 20px;
+}
+/*Verstuurbutton smaller en groter maken en achtergrondkleur instellen*/
+input[type="submit"]
+{
+    width: 10%;
+    height: 30px;
+    border-radius: 15%;
+    background-color: #FCCB07;
+    border-color: #FCCB07;
+}
+
+/*Verplichte velden aangeven met rood*/
+.verplichtVeld
+{
+    color: #FF0000;
+}
+
+/*Footer aan de onderkant van de pagina zetten*/
+footer
+{
+    position: absolute;
+    bottom: -25%;
+    left: 45%;
+}
