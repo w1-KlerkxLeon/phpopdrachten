@@ -1,0 +1,39 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   22-3-2020
+ *  Time:   12:45 uur
+ *  File:   opdracht_5.2.css
+ */
+
+/*Meer ruimte tussen label en invoerveld*/
+td
+{
+    width: 50%;
+}
+/*Inputvelden uitlijnen*/
+input[type=text]
+{
+    width: 100%;
+}
+/*Datumveld uitlijnen*/
+input[type=date]
+{
+    width: 99.5%;
+}
+/*Selectievak uitlijnen*/
+select
+{
+    width: 102.5%;
+}
+/*Berichtvak groter en breder maken*/
+textarea
+{
+    width: 99.7%;
+    height: 100px;
+}
+
+/*Verzonden formulier ruimte geven in tabel*/
+#form_sent>tbody>tr>td:nth-child(1)
+{
+    width: 25%;
+}
