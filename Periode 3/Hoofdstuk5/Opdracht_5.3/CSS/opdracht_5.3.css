@@ -1,0 +1,43 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   31-3-2020
+ *  Time:   19:45 uur
+ *  File:   opdracht_5.3.css
+ */
+
+/*Tabelcellen samenvoegen*/
+#form_data
+{
+    border-collapse: collapse;
+}
+/*Even rijen achtergrondkleur grijs*/
+#form_data>tbody>tr:nth-of-type(even)
+{
+    background-color: #D6D6D6;
+}
+/*Oneven rijen achtergrondkleur wit*/
+#form_data>tbody>tr:nth-of-type(odd)
+{
+    background-color: #FFFFFF;
+}
+/*Vraagcellen breder maken en padding geven*/
+#form_data>tbody>tr>td:nth-child(1)
+{
+    padding: 5px 0px;
+    width: 620px;
+}
+/*Antwoordcellen breder maken*/
+#form_data>tbody>tr>td:nth-child(2)
+{
+    width: 300px;
+}
+
+
+/*Titel van tabel padding en form_data achtergrond- en kleur geven*/
+.faq
+{
+    padding: 10px 0px;
+    background-color: #4CAF50;
+    color: #FFFFFF;
+}
+
