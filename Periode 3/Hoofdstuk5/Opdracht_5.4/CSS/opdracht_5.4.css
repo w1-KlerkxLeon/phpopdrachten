@@ -1,0 +1,42 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   1-4-2020
+ *  Time:   16:50 uur
+ *  File:   opdracht_5.4.csss
+ */
+
+/*Vragen dikgedrukt maken*/
+tr>td:nth-child(1)>label
+{
+    font-weight: 900;
+}
+/*Verstuur button over de hele cel breed maken*/
+input[type=submit]
+{
+    width: 100%
+}
+
+/*Fieldset met het antwoord groter maken*/
+fieldset+h2+fieldset
+{
+    height: 160px;
+}
+
+/*Paragraaftekst onder de uitleg ambulance en stopplicht zetten*/
+p
+{
+    position: relative;
+    top: 0%;
+}
+/*Groene kleur geven en vetgedrukt maken*/
+.green
+{
+    color: #008000;
+    font-weight: 900;
+}
+/*Rode kleur geven en vetgedrukt maken*/
+.red
+{
+    color: #FF0000;
+    font-weight: 900;
+}
