@@ -56,7 +56,7 @@
                 <!--Verzendknop-->
                 <tr>
                     <td>
-                        <input type="submit">
+                        <input type="submit" name="submit">
                     </td>
                 </tr>
             </table>
@@ -64,71 +64,176 @@
         <?php
         //Variabelen declareren  en initialisern
         $situation = "<h2>Wat is de situatie en wat moet ik doen?</h2>";
-        $ambulance = $_POST["ambulanceComing"];
-        $traffic = $_POST["trafficLightColor"];
+        //driveOn op false zetten
+        $driveOn = false;
 
+        //Als ambulance aangevinkt is
+        if(isset($_POST["ambulanceComing"]))
+        {
+            //ambulance bericht tonen
+            $ambulance = $_POST["ambulanceComing"];
+        }
+        else
+        {
+            //Anders leeg laten
+            $ambulance = "";
+        }
+
+        //Als de stoplicht aangevinkt is
+        if(isset($_POST["trafficLightColor"]))
+        {
+            //Bericht u mag doorrijden of u moet stoppen laten zien
+            $traffic = $_POST["trafficLightColor"];
+        }
+        else
+        {
+            //Dit bericht niet laten zien
+            $traffic = "";
+        }
 
         //Antwoord
+        //Als je op Verzenden drukt, komt er een vak met uitleg bij
+        if(isset($_POST["submit"]))
+        {
+            //Als er een ambulance komt en de stoplicht staat op rood
+            if($ambulance == "ja" && $traffic == "Rood")
+            {
+                echo $situation;
+                echo "<fieldset>";
+                echo "<p>Stoplicht staat op rood en er komt: ja een ambulance aan.</p>";
+                //driveOn aanroepen (NIET echoën)
+                //  $driveOn = false;
+                echo "<p class='red'>U moet stoppen</p>";
+            }
+            //Als er een ambulance komt en de stoplicht staat op groen
+            elseif($ambulance == "ja" && $traffic == "Groen")
+            {
+                echo $situation;
+                echo "<fieldset>";
+                echo "<p>Stoplicht staat op groen en er komt: ja een ambulance aan.</p>";
+                echo "<p class='red'>U moet stoppen</p>";
+            }
+            //Als er een ambulance komt en de stoplicht staat op oranje
+            elseif($ambulance == "ja" && $traffic == "Oranje")
+            {
+                echo $situation;
+                echo "<fieldset>";
+                echo "<p>Stoplicht staat op oranje en er komt: ja een ambulance aan.</p>";
+                echo "<p class='red'>U moet stoppen</p>";
+            }
+            //Als er geen ambulance komt en de stoplicht staat op rood
+            elseif($ambulance == "nee" && $traffic == "Rood")
+            {
+                echo $situation;
+                echo "<fieldset>";
+                echo "<p>Stoplicht staat op rood en er komt: nee een ambulance aan.</p>";
+                echo "<p class='red'>U moet stoppen</p>";
+            }
+            //Als er geen ambulance komt en de stoplicht staat op groen
+            elseif($ambulance == "nee" && $traffic == "Groen")
+            {
+                echo $situation;
+                echo "<fieldset>";
+                echo "<p>Stoplicht staat op groen en er komt: nee een ambulance aan.</p>";
+                echo "<p class='green'>U mag doorrijden</p>";
+            }
+            //Als er geen ambulance komt en de stoplicht staat op oranje
+            elseif($ambulance == "nee" && $traffic == "Oranje")
+            {
+                echo $situation;
+                echo "<fieldset>";
+                echo "<p>Stoplicht staat op oranje en er komt: nee een ambulance aan.</p>";
+                echo "<p class='red'>U moet stoppen</p>";
+            }
+            //Als 1 van beide NIET is ingevuld
+            elseif(empty($ambulance == "") || empty($traffic == "")) // || !isset($ambulance) || !isset($traffic))
+            {
+                echo $situation;
+                echo "<fieldset>";
+                echo "<p>Of stoplichtkleur is onbekend of het is onbekend of de ambulance komt.</p>";
+
+            }
+            //Als beide NIET zijn ingevuld
+            elseif(empty($ambulance) && empty($traffic))
+            {
+                echo $situation;
+                echo "<fieldset>";
+                echo "<p>Of stoplichtkleur is onbekend of het is onbekend of de ambulance komt.</p>";
+            }
+        }
+
+        //Fieldset afsluiten
+        echo "</fieldset>";
+
+/*  EINDE FORMULIER  */
         //Als er een ambulance komt en de stoplicht staat op rood
-            //Moet ik hier ook met isset() werken?
-        if($ambulance == "ja" && $traffic == "Rood")
+/*        if($ambulance == "ja" && $traffic == "Rood")
         {
             echo $situation;
             echo "<fieldset>";
-            echo "Stoplicht staat op rood en er komt: ja een ambulance aan.";
+            echo "<p>Stoplicht staat op rood en er komt: ja een ambulance aan.</p>";
             //driveOn aanroepen (NIET echoën)
-            $driveOn = false;
+          //  $driveOn = false;
+            echo "<p class='red'>U moet stoppen</p>";
         }
         //Als er een ambulance komt en de stoplicht staat op groen
         elseif($ambulance == "ja" && $traffic == "Groen")
         {
             echo $situation;
             echo "<fieldset>";
-            echo "Stoplicht staat op groen en er komt: ja een ambulance aan.";
-            $driveOn = false;
+            echo "<p>Stoplicht staat op groen en er komt: ja een ambulance aan.</p>";
+           // $driveOn = false;
+            echo "<p class='red'>U moet stoppen</p>";
         }
         //Als er een ambulance komt en de stoplicht staat op oranje
         elseif($ambulance == "ja" && $traffic == "Oranje")
         {
             echo $situation;
             echo "<fieldset>";
-            echo "Stoplicht staat op oranje en er komt: ja een ambulance aan.";
-            $driveOn = false;
+            echo "<p>Stoplicht staat op oranje en er komt: ja een ambulance aan.</p>";
+          //  $driveOn = false;
+            echo "<p class='red'>U moet stoppen</p>";
         }
         //Als er geen ambulance komt en de stoplicht staat op rood
         elseif($ambulance == "nee" && $traffic == "Rood")
         {
             echo $situation;
             echo "<fieldset>";
-            echo "Stoplicht staat op rood en er komt: nee een ambulance aan.";
-            $driveOn = false;
+            echo "<p>Stoplicht staat op rood en er komt: nee een ambulance aan.</p>";
+           // $driveOn = false;
+            echo "<p class='red'>U moet stoppen</p>";
         }
         //Als er geen ambulance komt en de stoplicht staat op groen
         elseif($ambulance == "nee" && $traffic == "Groen")
         {
             echo $situation;
             echo "<fieldset>";
-            echo "Stoplicht staat op groen en er komt: nee eem ambulance aan.";
-            $driveOn = true;
+            echo "<p>Stoplicht staat op groen en er komt: nee eem ambulance aan.</p>";
+          //  $driveOn = true;
+            echo "<p class='green'>U mag doorrijden</p>";
         }
+        */
+
         //Als er geen ambulance komt en de stoplicht staat op oranje
-        elseif($ambulance == "nee" && $traffic == "Oranje")
+ /*       elseif($ambulance == "nee" && $traffic == "Oranje")
         {
             echo $situation;
             echo "<fieldset>";
-            echo "Stoplicht staat op oranje en er komt: nee een ambulance aan.";
-            $driveOn = false;
+            echo "<p>Stoplicht staat op oranje en er komt: nee een ambulance aan.</p>";
+          //  $driveOn = false;
+            echo "<p class='red'>U moet stoppen</p>";
         }
-
-        elseif(empty($ambulance == "") || empty($traffic == ""))
+*/
+     //   elseif(empty($ambulance == "") || empty($traffic == ""))
+    /*    elseif(empty($ambulance == "") || empty($traffic == "") || !isset($ambulance) || !isset($traffic))
         {
             echo $situation;
             echo "<fieldset>";
             echo "Of stoplichtkleur is onbekend of het is onbekend of de ambulance komt.";
 
-        }
+        } */
 
-        //Als driveOn true is
+        /*//Als driveOn true is
         if($driveOn == true)
         {
             echo "<p class='green'>U mag doorrijden</p>";
@@ -137,17 +242,11 @@
         elseif($driveOn == false)
         {
             echo "<p class='red'>U moet stoppen</p>";
-        }
+        }*/
 
-
-        //Fieldset afsluiten
-        echo "</fieldset>";
-
-
-
-        //echo print_r($_POST);
         //echo print_r($_POST);
         ?>
+
     </form>
 
 
