@@ -1,0 +1,19 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   8-4-2020
+ *  Time:   14:25 uur
+ *  File:   login.css
+ */
+
+/*Openingstijden smaller maken en adresgegevens naast openingstijden zetten*/
+fieldset
+{
+    width: 20%;
+    display: inline-block;
+}
+/*Adres dezelfde hoogte geven als openingstijden*/
+fieldset+fieldset
+{
+    position: absolute;
+    height: 25.5%;
+}
