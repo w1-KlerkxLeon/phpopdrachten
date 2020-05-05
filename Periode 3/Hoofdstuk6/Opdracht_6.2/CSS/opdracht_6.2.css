@@ -1,0 +1,32 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   29-4-2020
+ *  Time:   19:50 uur
+ *  File:   opdracht_6.2.css
+ */
+
+/*1e fieldset border geven*/
+fieldset
+{
+    border: none;
+    height: 150px;
+}
+/*Fieldset met het antwoord erin kleiner maken*/
+br+fieldset
+{
+    height: 200px;
+}
+
+/*Afbeeldingen naast elkaar zetten met tussenruimtes*/
+.float
+{
+    display: inline-block;
+    width: 10%;
+}
+
+/*Radiobutton boven zetten i.p.v. onder*/
+input
+{
+    position: relative;
+    top: -30px;
+}
