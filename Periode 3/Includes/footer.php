@@ -14,6 +14,7 @@
     </main>
     <!--Footer-->
     <footer>
+        <!--Footer code-->
         <span>&copy; <?php echo $name;?> </span>
         <?php
         //Taak 6 opdracht 2
@@ -45,6 +46,22 @@
         {
             echo "Goedenavond";
         }
+        ?>
+
+        <!--Sessie code-->
+        <?php
+        //session_start(); //Als ik deze in commentaar zet, krijg ik geen foutmeldingen te zien
+        if(isset($_SESSION['username']))
+        {
+            $bezoeker = $_SESSION['username']. "&nbsp;<a href='../../Hoofdstuk6/Opdracht_6.1/loguit.php'>Loguit</a>";
+        }
+        else
+        {
+            $bezoeker = "onbekende bezoeker". "&nbsp;<a href='../../Hoofdstuk6/Opdracht_6.1/opdracht_6.1.php'>Login</a>";
+        }
+        //print vervolgens ook de $bezoeker zodat je de volgende visuele
+        //weergave in de pagina ziet
+        echo $bezoeker;
         ?>
     </footer>
 </body>
