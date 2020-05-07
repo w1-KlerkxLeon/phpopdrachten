@@ -5,10 +5,6 @@
  *  Time:   19:30 uur
  *  File:   opdracht_6.2.php
  */
-session_start();
-//2 gebruikers aanmaken
-$_SESSION['gebruiker'] += 0;
-$_SESSION['computer'] += 0;
 ?>
 
 <?php
@@ -16,6 +12,17 @@ $_SESSION['computer'] += 0;
     include "../../Includes/header.php";
     //Menu inladen
     include "../../Includes/menu.php";
+?>
+
+<?php
+//Als gebruiker en computer niet bestaat
+if(!isset($_SESSION['gebruiker']) && !isset($_SESSION['computer']))
+{
+    //De waarde van gebruiker en computer op 0 zetten
+    $_SESSION['gebruiker'] = 0;
+    $_SESSION['computer'] = 0;
+}
+
 ?>
 
 <main>
@@ -124,41 +131,6 @@ $_SESSION['computer'] += 0;
                 echo "Het spel start weer opnieuw als je een nieuwe keuze maakt";
                 session_destroy();
             }
-
-
-            //Als gebruiker steen kiest en computer schaar
-            //Of als gebruiker papier kiest en computer steen
-            //OF als gebruiker schaar kiest en computer papier
-      /*      if(isset($_GET['keuze']) == $opties[0] && $computerkeuze == $opties[2] ||
-                isset($_GET['keuze']) == $opties[1] && $computerkeuze == $opties[0] ||
-                isset($_GET['keuze']) == $opties[2] && $computerkeuze == $opties[1])
-            {
-                echo "<h1>Jij scoort</h1>";
-                //Stand van user1 verhogen met 1 punt
-                $_SESSION['gebruiker'] += 1;
-
-                //MOET DIE HIERBIJ?
-                $_SESSION['computer'] = 0;
-
-                echo "De score is " . $_SESSION['gebruiker'] . " tegen " . $_SESSION['computer'] . "";
-            }
-            elseif(isset($_GET['keuze']) == $opties[2] && $computerkeuze == $opties[2])
-            {
-                echo "<h1>Gelijk!</h1>";
-                //Beide users verhogen met 1 punt
-                $_SESSION['gebruiker'] += 1;
-                $_SESSION['computer'] += 1;
-
-                echo "De score is " . $_SESSION['gebruiker'] . " tegen " . $_SESSION['computer'] . "";
-            }
-            else
-            {
-                echo "<h1>De computer scoort</h1>";
-                //Stand van de computer verhogen met 1 punt
-                $_SESSION['computer'] += 1;
-
-                echo "De score is " . $_SESSION['gebruiker'] . " tegen " . $_SESSION['computer'] . "";
-            }*/
         }
     ?>
 
