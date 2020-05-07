@@ -24,22 +24,17 @@
                 session_start();
                 $_SESSION['username'] = $_POST['username'];
                 header('location: welkom.php');
-                $showLogin = true;
             }
         }
     }
 
-    if($_POST['username'] == 'Leon' && $_POST['password'] == 'Klerkx')
+    //Als gebruikersnaam OF wachtwoord niet gelijk is aan de key en value van de array
+    if($_POST['username'] != $username && $_POST['password'] != $password)
     {
-        /*session_start();
-        $_SESSION['username'] = $_POST['username'];
-        header('location: welkom.php');*/
-    }
-    //Anders opdracht 6.1 inladen
-    else
-    {
-         $message = "Ongeldige username/wachtwoord
-         {$_POST['username']}, probeer het nog eens.";
+        //Bericht tonen
+        $message = "Ongeldige username/wachtwoord
+        {$_POST['username']}, probeer het nog eens.";
+        //Huidige pagina inladen
         include "opdracht_6.1.php";
     }
 ?>
