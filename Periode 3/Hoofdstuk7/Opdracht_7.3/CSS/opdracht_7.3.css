@@ -1,0 +1,20 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   19-5-2020
+ *  Time:   12:00 uur
+ *  File:   opdracht_7.3.css
+ */
+
+/*Randen om de tabel heen*/
+table, tr, th, td
+{
+    border: 1px solid #000000;
+}
+
+/*Footer goed positioneren*/
+footer
+{
+    position: relative;
+    clear: left;
+    bottom: -10px;
+}
