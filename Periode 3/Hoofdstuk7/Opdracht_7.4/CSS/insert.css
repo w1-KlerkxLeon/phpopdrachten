@@ -1,0 +1,23 @@
+/*
+ *  User:   Leon Klerkx
+ *  Date:   23-5-2020
+ *  Time:   16:20 uur
+ *  File:   insert.css
+ */
+
+/*Bij grap toevoegen labelteksten schuin zetten*/
+p+span, p+span+br+span
+{
+    font-style: italic;
+}
+/*Link om naar opdracht 7.3 te gaan, niet onderstrepen*/
+br+a
+{
+    text-decoration: none;
+    color: #0000FF;
+}
+/*Link onderstrepen als je eroverheen gaat*/
+br+a:hover
+{
+    text-decoration: underline;
+}
