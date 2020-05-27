@@ -71,6 +71,13 @@
             //Grappen toevoegen aan de database met de huidige datum en tijd
             $sql = "INSERT INTO joke VALUES('"  . $_POST['joketext'] . " ',' " . $_POST['jokeclou'] . "',  '" . date("Y/m/d H:i:s") . "')";
 
+            //Function aanroepen waar de try en catch van de database in zit
+            startConnection();
+
+            //Hiermee voeg je zelf een grap aan de database toe
+            //Met $sql voeg je de gegevens aan de database toe
+            executeQueryViaExec($sql);
+
             //Grap toegevoegd
             echo "<h1>Grap toegevoegd!</h1>";
             echo "<p>Bedankt voor het toevoegen van je grap. Hieronder zie je een overzicht van je grap:</p>";
@@ -83,19 +90,11 @@
         else
         {
             //Melding tonen
-            echo $sql = "<br><h2>Joketext en/of jokeclou is niet ingevuld</h2>";
-            //echo "<br>Joketext en/of jokeclou is niet ingevuld";
+            echo "<h2>Joketext en/of jokeclou is niet ingevuld</h2>";
         }
 
         //Miliseconden worden toegevoegd
 //        echo date('m-d-Y H:i:').sprintf('%0.3f', date('s')+fmod(microtime(true), 1));
-
-        //Function aanroepen waar de try en catch van de database in zit
-        startConnection();
-
-        //Hiermee voeg je zelf een grap aan de database toe
-        //Met $sql voeg je de gegevens aan de database toe
-        executeQueryViaExec($sql);
 
     }
 
