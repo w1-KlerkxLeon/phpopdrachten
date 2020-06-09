@@ -53,44 +53,52 @@
 
 
 <?php
-
     //Als het formulier verstuurd is
     if(isset($_POST['verstuur']))
     {
-        //Variabelen declareren met de SELECT statement die in SQL hoort
-        $query = "SELECT * FROM joke WHERE joketext = " . '&#39;' .$_POST['joketext'] . '&#39;' . " AND jokeclou = " . '&#39;' . $_POST['jokeclou'] . '&#39;' . "";
-        //Variabelen echoën
-        echo $query;
-
-        //Tijdzone instellen
-        date_default_timezone_set("Europe/Amsterdam");
-
-        //Als joketext en jokeclou zijn ingevuld
-        if(!empty($_POST['joketext']) && !empty($_POST['jokeclou']))
+        //Als een gebruiker is ingelogd
+        if(!empty($_SESSION) && $_SESSION['username'] != "")
         {
-            //Grappen toevoegen aan de database met de huidige datum en tijd
-            $sql = "INSERT INTO joke VALUES('"  . $_POST['joketext'] . " ',' " . $_POST['jokeclou'] . "',  '" . date("Y/m/d H:i:s") . "')";
+            //Variabelen declareren met de SELECT statement die in SQL hoort
+            $query = "SELECT * FROM joke WHERE joketext = " . '&#39;' .$_POST['joketext'] . '&#39;' . " AND jokeclou = " . '&#39;' . $_POST['jokeclou'] . '&#39;' . "";
+            //Variabelen echoën
+            echo $query;
 
-            //Function aanroepen waar de try en catch van de database in zit
-            startConnection();
+            //Tijdzone instellen
+            date_default_timezone_set("Europe/Amsterdam");
 
-            //Hiermee voeg je zelf een grap aan de database toe
-            //Met $sql voeg je de gegevens aan de database toe
-            executeQueryViaExec($sql);
+            //Als joketext en jokeclou zijn ingevuld
+            if(!empty($_POST['joketext']) && !empty($_POST['jokeclou']))
+            {
+                //Grappen toevoegen aan de database met de huidige datum en tijd
+                $sql = "INSERT INTO joke VALUES('"  . $_POST['joketext'] . " ',' " . $_POST['jokeclou'] . "',  '" . date("Y/m/d H:i:s") . "')";
 
-            //Grap toegevoegd
-            echo "<h1>Grap toegevoegd!</h1>";
-            echo "<p>Bedankt voor het toevoegen van je grap. Hieronder zie je een overzicht van je grap:</p>";
-            echo "<span>Joketext:</span> " . $_POST['joketext'] . "<br>";
-            echo "<span>Jokeclou:</span> " . $_POST['jokeclou'] . "<br> <br><br>";
-            //Link naar opdracht 7.3
-            echo "<a href='../Opdracht_7.3/index.php'>Bekijk grappen (opdracht 7.3)</a>";
+                //Function aanroepen waar de try en catch van de database in zit
+                startConnection();
+
+                //Hiermee voeg je zelf een grap aan de database toe
+                //Met $sql voeg je de gegevens aan de database toe
+                executeQueryViaExec($sql);
+
+                //Grap toegevoegd
+                echo "<h1>Grap toegevoegd!</h1>";
+                echo "<p>Bedankt voor het toevoegen van je grap. Hieronder zie je een overzicht van je grap:</p>";
+                echo "<span>Joketext:</span> " . $_POST['joketext'] . "<br>";
+                echo "<span>Jokeclou:</span> " . $_POST['jokeclou'] . "<br> <br><br>";
+                //Link naar opdracht 7.3
+                echo "<a href='../Opdracht_7.3/index.php'>Bekijk grappen (opdracht 7.3)</a>";
+            }
+            //Als 1 of beide velden leeg zijn
+            else
+            {
+                //Melding tonen
+                echo "<h2>Joketext en/of jokeclou is niet ingevuld</h2>";
+            }
         }
-        //Als 1 of beide velden leeg zijn
+        //Als je niet bent ingelogd
         else
         {
-            //Melding tonen
-            echo "<h2>Joketext en/of jokeclou is niet ingevuld</h2>";
+            echo "<h2>U bent niet gemachtigd om een grap toe te voegen. <a href='../../Hoofdstuk6/Opdracht_6.1/opdracht_6.1.php'>Log</a> eerst in voordat u een grap kunt toevoegen.</h2>";
         }
 
         //Miliseconden worden toegevoegd
